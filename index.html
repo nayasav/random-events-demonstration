@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Event Simulator</title>
+    <style>
+        /* Стилізація для контейнера та списків */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .event-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .event-list-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Заголовок програми -->
+    <h1>Random Event Simulator</h1>
+    
+    <!-- Форма для додавання нової події -->
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName">
+    
+    <label for="eventProbability">Event Probability (0-1):</label>
+    <input type="number" id="eventProbability" step="0.01">
+    
+    <button onclick="addEvent()">Add Event</button>
+    
+    <!-- Форма для налаштування кількості симуляцій -->
+    <label for="simulationCount">Number of Simulations:</label>
+    <input type="number" id="simulationCount">
+    
+    <button onclick="runSimulation()">Run Simulation</button>
+    
+    <!-- Виведення результатів симуляцій -->
+    <h2>Simulation Results:</h2>
+    <ul id="resultsList" class="event-list"></ul>
+
+    <!-- Виведення списку подій та статистики -->
+    <div class="container">
+        <div>
+            <h2>Event List</h2>
+            <ul id="eventList" class="event-list"></ul>
+        </div>
+
+        <div>
+            <h2>Statistics</h2>
+            <div id="statisticsContainer"></div>
+        </div>
+    </div>
+
+    <!-- Підключення JavaScript файлу -->
+    <script src="events.js"></script>
+</body>
+</html>
